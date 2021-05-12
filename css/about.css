@@ -1,0 +1,603 @@
+/* Start The Main Variables */
+
+:root {
+    --main-color: #FBA000;
+    --second-color: #FEDB9C;
+    --bg-color: #000;
+    --high-bg-color: #312f2d;
+    --main-duration: 0.4s;
+    --section-padding: 30px;
+}
+
+
+/* End Main Varables */
+
+
+/* Start Global Rules */
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: var(--bg-color);
+    box-sizing: border-box;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Small */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+
+/* Medium */
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+/* Large */
+
+@media (min-width: 1170px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+
+/* End Global Rules */
+
+
+/* Start Compononets */
+
+
+/* End Compononets */
+
+
+/* Start Style Header */
+
+.header {
+    background: var(--bg-color);
+}
+
+.header .container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header .container .img-cont img {
+    height: 60px;
+}
+
+.header .container .links {
+    position: relative;
+}
+
+.header .container .links .shape {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.header .container .links .shape span {
+    background-color: var(--main-color);
+    height: 4px;
+    width: 100%;
+    margin: 4px 0;
+    border-radius: 4px;
+}
+
+.header .container .links .shape span:nth-child(2) {
+    width: 60%;
+    transition: width var(--main-duration) ease;
+}
+
+.header .container .links:hover .shape span:nth-child(2) {
+    width: 100%;
+}
+
+.header .container .links:hover ul {
+    display: block;
+}
+
+.header .container .links ul {
+    min-width: 120px;
+    padding: 0 10px;
+    margin: 0;
+    position: absolute;
+    list-style: none;
+    top: calc(100% + 10px);
+    right: 20px;
+    background: var(--high-bg-color);
+    z-index: 5;
+    box-shadow: -1px -1px 10px gray;
+    display: none;
+}
+
+.header .container .links ul:before {
+    content: "";
+    position: absolute;
+    border-color: transparent transparent var(--high-bg-color) transparent;
+    border-style: solid;
+    border-width: 10px;
+    top: -20px;
+    right: 5px;
+}
+
+.header .container .links ul li {
+    margin: 10px 0;
+    transition: var(--main-duration);
+    padding-bottom: 5px;
+}
+
+.header .container .links ul li:not(:last-child) {
+    border-bottom: 1px solid black;
+    transition: var(--main-duration);
+}
+
+.header .container .links ul li:not(:last-child):hover {
+    border-bottom-color: var(--main-color);
+}
+
+.header .container .links ul li a {
+    text-decoration: none;
+    color: var(--main-color);
+    display: inline-block;
+    transition: var(--main-duration);
+    font-size: 17;
+}
+
+.header .container .links ul a:hover {
+    margin-left: 25px;
+}
+
+
+/* End Style Header */
+
+
+/* Start Style Landing */
+
+.landing {
+    height: calc(100vh - 83px);
+    background-image: url("../images/wide3.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.landing .container div {
+    height: 200px;
+    width: 200px;
+    background-color: var(--bg-color);
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    overflow: hidden;
+    transition: var(--main-duration);
+}
+
+.landing .container div:hover {
+    color: var(--bg-color);
+}
+
+.landing .container div h1 {
+    font-weight: 400;
+    font-size: 35px;
+    margin: 0;
+    z-index: 10;
+    cursor: default;
+    position: relative;
+}
+
+.landing .container div h1::before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    top: -2px;
+    left: 50%;
+    background: var(--main-color);
+    transform: translateX(-50%);
+    transition: var(--main-duration);
+}
+
+.landing .container div:hover h1::before {
+    background-color: var(--bg-color);
+}
+
+.landing .container div h1::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    bottom: -2px;
+    left: 50%;
+    background: var(--main-color);
+    transform: translateX(-50%);
+    transition: var(--main-duration);
+}
+
+.landing .container div:hover h1::after {
+    background-color: var(--bg-color);
+}
+
+.landing .container div p {
+    line-height: 1.7;
+    font-weight: 200;
+    margin-bottom: 0;
+    z-index: 10;
+    cursor: default;
+}
+
+.landing .container div div {
+    /* position: absolute; */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    bottom: -100px;
+    left: -100px;
+    transition: var(--main-duration);
+    display: block;
+    z-index: -2;
+}
+
+.landing .container div:hover div {
+    transform: scale(50);
+}
+
+.first-info {
+    color: white;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width:394px) {
+    .first-info {
+        height: 100vh;
+    }
+}
+
+.first-info .container div {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.first-info .container div h1 {
+    -webkit-text-stroke: 1px var(--main-color);
+    color: black;
+    font-size: 45px;
+    margin-top: 0;
+}
+
+.first-info .container div p:first-of-type {
+    line-height: 1.7;
+    font-style: italic;
+}
+
+.first-info .container div p:last-of-type {
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+
+/* End Style Landing  And First Info*/
+
+
+/* Start Style Photo And Quote  */
+
+.photo-quote {
+    height: 70vh;
+    background-image: url("../images/quote.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.quote {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.quote .container div {
+    width: 70%;
+    margin: auto;
+}
+
+@media (max-width:678px) {
+    .quote .container div {
+        width: 100%;
+    }
+}
+
+.quote .container div h1 {
+    -webkit-text-stroke: 1px var(--main-color);
+    color: black;
+    font-size: 45px;
+    margin: 0;
+    line-height: 1.7;
+}
+
+
+/* End Style Photo And Quote  */
+
+.contactt {
+    min-height: 100vh;
+    background-image: url(../images/contact.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contactt .container>div {
+    width: 80%;
+    background-color: var(--bg-color);
+    margin: auto;
+    padding: 20px;
+    padding-bottom: 80px;
+    position: relative;
+}
+
+@media (min-width:890px) {
+    .contactt .container>div {
+        width: 75%;
+    }
+}
+
+.contactt .container>div .first {
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 0;
+    line-height: 1.7;
+}
+
+.contactt .container>div .second {
+    color: white;
+    font-weight: 200;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.contactt .container>div div {
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    background: var(--bg-color);
+    border: 1px solid var(--main-color);
+    top: calc(100% - 75px);
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 10px;
+}
+
+@media (max-width:424px) {
+    .contactt .container>div div {
+        width: 200px;
+        height: 150px;
+    }
+}
+
+.contactt .container>div div h3 {
+    color: var(--main-color);
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contactt .container>div div h3+p {
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* End Style Contact */
+
+.menu {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.menu .container {
+    max-width: 550px;
+}
+
+.menu .container h1 {
+    -webkit-text-stroke: 1px var(--main-color);
+    text-align: center;
+}
+
+.menu .container>div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.menu .container>div div {
+    width: 150px;
+    height: 150px;
+    border: 1px solid var(--main-color);
+    padding: 10px;
+    transition: var(--main-duration);
+}
+
+.menu .container>div div:hover {
+    background-color: var(--main-color);
+}
+
+.menu .container>div div p {
+    color: var(--main-color);
+    line-height: 1.7;
+    font-size: 18px;
+    margin: 0;
+    transition: var(--main-duration);
+}
+
+.menu .container>div div:hover p {
+    color: #000;
+}
+
+.photo-since {
+    height: 70vh;
+    background-image: url("../images/since.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.since {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.since .container {
+    width: 80%;
+    margin: auto;
+}
+
+.since .container p {
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.since .container h1 {
+    font-size: 45px;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.since .container h1 span {
+    color: #000;
+    -webkit-text-stroke: 1px var(--main-color);
+}
+
+
+/* Start Style Footer */
+
+.footer.new-section {
+    padding-bottom: 0;
+}
+
+.footer .container {
+    background-color: var(--second-color);
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer .container ul {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+.footer .container .ul-head {
+    list-style: none;
+    font-weight: 700;
+    border-bottom: 2px solid var(--main-color);
+    padding-bottom: 4px;
+    padding-bottom: 5px;
+}
+
+.footer .container ul li:not(.ul-head) {
+    margin-left: 5px;
+    padding-left: 0;
+    text-decoration: underline;
+    padding-bottom: 7px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--main-duration);
+}
+
+.footer .container ul li:not(.ul-head):hover {
+    padding-left: 5px;
+}
+
+.footer .container .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--main-color);
+    margin-top: 5px;
+    padding: 5px 0;
+}
+
+.footer .container .contact div:nth-child(1) {
+    padding: 5px 0;
+}
+
+.footer .container .contact div:nth-child(1) a {
+    color: #000;
+    padding-right: 5px;
+    font-weight: 600;
+}
+
+.footer .container .contact div:nth-child(1) i:first-of-type {
+    color: blue;
+    cursor: pointer;
+}
+
+.footer .container .contact div:nth-child(1) i:last-of-type {
+    color: crimson;
+    cursor: pointer;
+}
+
+.footer .container .contact div:nth-child(2) p {
+    margin: 5px 0;
+}
+
+
+/* End Footer */

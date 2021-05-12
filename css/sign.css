@@ -1,0 +1,359 @@
+/* Start The Main Variables */
+
+:root {
+    --main-color: #fba000;
+    --second-color: #fedb9c;
+    --bg-color: #000;
+    --high-bg-color: #312f2d;
+    --main-duration: 0.4s;
+    --section-padding: 30px;
+}
+
+
+/* End The Main Variables */
+
+
+/* Start Global Rules */
+
+body {
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Small */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+
+/* Medium */
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+/* Large */
+
+@media (min-width: 1170px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+
+/* End Global Rules */
+
+
+/* Start Compononets */
+
+
+/* End Compononets */
+
+
+/* Start Style Header */
+
+.header {
+    background: var(--bg-color);
+}
+
+.header .container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header .container .img-cont img {
+    height: 60px;
+}
+
+.header .container .links {
+    position: relative;
+}
+
+.header .container .links .shape {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.header .container .links .shape span {
+    background-color: var(--main-color);
+    height: 4px;
+    width: 100%;
+    margin: 4px 0;
+    border-radius: 4px;
+}
+
+.header .container .links .shape span:nth-child(2) {
+    width: 60%;
+    transition: width var(--main-duration) ease;
+}
+
+.header .container .links:hover .shape span:nth-child(2) {
+    width: 100%;
+}
+
+.header .container .links:hover ul {
+    display: block;
+}
+
+.header .container .links ul {
+    min-width: 120px;
+    padding: 0 10px;
+    margin: 0;
+    position: absolute;
+    list-style: none;
+    top: calc(100% + 10px);
+    right: 20px;
+    background: var(--high-bg-color);
+    z-index: 5;
+    box-shadow: -1px -1px 10px gray;
+    display: none;
+}
+
+.header .container .links ul:before {
+    content: "";
+    position: absolute;
+    border-color: transparent transparent var(--high-bg-color) transparent;
+    border-style: solid;
+    border-width: 10px;
+    top: -20px;
+    right: 5px;
+}
+
+.header .container .links ul li {
+    margin: 10px 0;
+    transition: var(--main-duration);
+    padding-bottom: 5px;
+}
+
+.header .container .links ul li:not(:last-child) {
+    border-bottom: 1px solid black;
+    transition: var(--main-duration);
+}
+
+.header .container .links ul li:not(:last-child):hover {
+    border-bottom-color: var(--main-color);
+}
+
+.header .container .links ul li a {
+    text-decoration: none;
+    color: var(--main-color);
+    display: inline-block;
+    transition: var(--main-duration);
+    font-size: 17;
+}
+
+.header .container .links ul a:hover {
+    margin-left: 25px;
+}
+
+
+/* End Style Header */
+
+section {
+    background-image: url("../images/signup2.jpg");
+    background-position: center;
+    background-size: cover;
+    max-width: 100%;
+    height: calc(100vh - 83px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+section .card {
+    max-width: 700px;
+    background: black;
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    z-index: 3;
+    box-shadow: 0 0 10px 2px #000;
+}
+
+@media (max-width:714px) {
+    section .card {
+        max-width: 320px;
+        display: block;
+    }
+}
+
+section .card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background-color: var(--main-color);
+}
+
+section .card div:first-child {
+    position: relative;
+    width: 50%;
+}
+
+section .card div:first-child img {
+    width: 100%;
+}
+
+section .card div:first-child div {
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    height: fit-content;
+    padding: 0;
+}
+
+@media (max-width:714px) {
+    section .card div:first-child img {
+        display: none;
+    }
+    section .card div:first-child div {
+        display: none;
+    }
+}
+
+section .card div:first-child h1 {
+    color: var(--main-color);
+    margin: 0;
+    font-weight: 400;
+}
+
+section .card div:last-child {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 35px;
+    padding-bottom: 20px;
+}
+
+@media (max-width:714px) {
+    section .card div:last-child {
+        width: 100%;
+    }
+}
+
+section .card div:last-child>div {
+    text-align: center;
+    width: 100%;
+}
+
+section .card div:last-child>div h1 {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+section .card div:last-child>div p {
+    margin: 10px;
+    color: var(--main-color);
+}
+
+section .card div:last-child>div p a {
+    color: #fff;
+}
+
+section .card div:last-child form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+}
+
+section .card div:last-child form .write {
+    width: 80%;
+    display: inline-block;
+}
+
+section .card div:last-child form .write input {
+    margin-top: 20px;
+    width: 100%;
+    border: none;
+    padding: 3px 0px 5px 3px;
+    background: var(--bg-color);
+    outline: none;
+    position: relative;
+    transition: var(--main-duration);
+    border-bottom: 1px solid var(--main-color);
+    caret-color: var(--main-color);
+    color: #fff;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 0.7;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #fff;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #fff;
+}
+
+section .card div:last-child form .sign {
+    width: 80%;
+    display: inline-block;
+}
+
+section .card div:last-child form .sign div:first-of-type label {
+    cursor: pointer;
+    color: var(--main-color);
+}
+
+section .card div:last-child form .sign div:first-of-type label span {
+    color: #fff;
+}
+
+section .card div:last-child form .sign div:first-of-type input {
+    cursor: pointer;
+}
+
+section .card div:last-child form .sign div:last-of-type button {
+    width: 50%;
+    padding: 5px;
+    background: #000;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    color: var(--main-color);
+    transition: var(--main-duration);
+}
+
+section .card div:last-child form .sign div:last-of-type button:hover {
+    color: #000;
+    background-color: var(--main-color);
+}

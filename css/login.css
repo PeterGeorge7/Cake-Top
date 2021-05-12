@@ -1,0 +1,392 @@
+/* Start The Main Variables */
+
+ :root {
+    --main-color: #FBA000;
+    --second-color: #FEDB9C;
+    --bg-color: #000;
+    --high-bg-color: #312f2d;
+    --main-duration: 0.4s;
+    --section-padding: 30px;
+}
+
+
+/* End The Main Variables */
+
+
+/* Start Global Rules */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/back-two.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    /* height: calc(100vh + 84px); */
+}
+
+@media (min-width:970px) {
+    body {
+        background-image: url("../images/binyoussif-rXsB3SqfYn8-unsplash.jpg");
+    }
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Small */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+
+/* Medium */
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+/* Large */
+
+@media (min-width: 1170px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+
+/* End Global Rules */
+
+
+/* Start Compononets */
+
+
+/* End Compononets */
+
+
+/* Start Style Header */
+
+.header {
+    background: var(--bg-color);
+}
+
+.header .container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header .container .img-cont img {
+    height: 60px;
+}
+
+.header .container .links {
+    position: relative;
+}
+
+.header .container .links .shape {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.header .container .links .shape span {
+    background-color: var(--main-color);
+    height: 4px;
+    width: 100%;
+    margin: 4px 0;
+    border-radius: 4px;
+}
+
+.header .container .links .shape span:nth-child(2) {
+    width: 60%;
+    transition: width var(--main-duration) ease;
+}
+
+.header .container .links:hover .shape span:nth-child(2) {
+    width: 100%;
+}
+
+.header .container .links:hover ul {
+    display: block;
+}
+
+.header .container .links ul {
+    min-width: 120px;
+    padding: 0 10px;
+    margin: 0;
+    position: absolute;
+    list-style: none;
+    top: calc(100% + 10px);
+    right: 20px;
+    background: var(--high-bg-color);
+    z-index: 5;
+    box-shadow: -1px -1px 10px gray;
+    display: none;
+}
+
+.header .container .links ul:before {
+    content: "";
+    position: absolute;
+    border-color: transparent transparent var(--high-bg-color) transparent;
+    border-style: solid;
+    border-width: 10px;
+    top: -20px;
+    right: 5px;
+}
+
+.header .container .links ul li {
+    margin: 10px 0;
+    transition: var(--main-duration);
+    padding-bottom: 5px;
+}
+
+.header .container .links ul li:not(:last-child) {
+    border-bottom: 1px solid black;
+    transition: var(--main-duration);
+}
+
+.header .container .links ul li:not(:last-child):hover {
+    border-bottom-color: var(--main-color);
+}
+
+.header .container .links ul li a {
+    text-decoration: none;
+    color: var(--main-color);
+    display: inline-block;
+    transition: var(--main-duration);
+    font-size: 17;
+}
+
+.header .container .links ul a:hover {
+    margin-left: 25px;
+}
+
+
+/* End Style Header */
+
+
+/* Start Style Card  */
+
+.card-section {
+    height: calc(100vh);
+    position: relative;
+}
+
+.card {
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(0 0 0 / 79%);
+    color: #fba000;
+    padding: 25px;
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+}
+
+@media (max-width:375px) {
+    .card {
+        width: 250px;
+    }
+}
+
+.card .head {
+    text-align: center;
+    width: 100%;
+}
+
+.card .head h2 {
+    margin: 15px 0 5px;
+}
+
+.card .head p a {
+    color: white;
+}
+
+.card .head button {
+    width: 100%;
+    padding: 10px;
+    color: #fba000;
+    background: var(--bg-color);
+    border: 1px solid var(--second-color);
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--main-duration);
+}
+
+.card .head button:hover {
+    box-shadow: 0 0 5px 1px var(--main-color);
+}
+
+.card .hr {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.card .hr::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: calc(50% - 15px);
+    background: white;
+    top: 50%;
+    right: 0;
+}
+
+.card .hr::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: calc(50% - 15px);
+    background: white;
+    top: 50%;
+    left: 0px;
+}
+
+.card .hr h5 {
+    display: inline-block;
+}
+
+.card form {
+    width: 100%;
+    overflow: hidden;
+}
+
+.card form input {
+    width: 100%;
+    border: none;
+    padding: 5px;
+    margin-top: 7px;
+}
+
+.card form input:focus {
+    outline: 1px solid var(--main-color);
+}
+
+.card form label:last-of-type {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.card form button {
+    margin-top: 20px;
+    padding: 7px;
+    background: var(--main-color);
+    border: none;
+    font-weight: 900;
+    font-size: 17px;
+    width: 100%;
+}
+
+.button {
+    width: 100%;
+    text-align: center;
+}
+
+
+/* End Style Card */
+
+
+/* Start Style Footer */
+
+.footer.new-section {
+    padding-bottom: 0;
+}
+
+.footer .container {
+    background-color: var(--second-color);
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer .container ul {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+.footer .container .ul-head {
+    list-style: none;
+    font-weight: 700;
+    border-bottom: 2px solid var(--main-color);
+    padding-bottom: 4px;
+    padding-bottom: 5px;
+}
+
+.footer .container ul li:not(.ul-head) {
+    margin-left: 5px;
+    padding-left: 0;
+    text-decoration: underline;
+    padding-bottom: 7px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--main-duration);
+}
+
+.footer .container ul li:not(.ul-head):hover {
+    padding-left: 5px;
+}
+
+.footer .container .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--main-color);
+    margin-top: 5px;
+    padding: 5px 0;
+}
+
+.footer .container .contact div:nth-child(1) {
+    padding: 5px 0;
+}
+
+.footer .container .contact div:nth-child(1) a {
+    color: #000;
+    padding-right: 5px;
+    font-weight: 600;
+}
+
+.footer .container .contact div:nth-child(1) i:first-of-type {
+    color: blue;
+    cursor: pointer;
+}
+
+.footer .container .contact div:nth-child(1) i:last-of-type {
+    color: crimson;
+    cursor: pointer;
+}
+
+.footer .container .contact div:nth-child(2) p {
+    margin: 5px 0;
+}
+
+
+/* End Footer */
